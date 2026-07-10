@@ -106,29 +106,23 @@ nav a:hover {
 
 
 .hero {
-
     min-height: 100vh;
 
-    padding: 150px 8% 80px;
-
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    justify-content: space-between;
-
-    position: relative;
-
+    text-align: center;
 }
 
 
 
 .hero-content {
-
-    max-width: 650px;
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 
 
 .hero h1 {
@@ -140,6 +134,28 @@ nav a:hover {
     font-weight: 800;
 
 }
+
+
+
+
+.hero-title {
+    width: 100%;
+    text-align: center;
+    
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    
+    color: white;
+
+    white-space: nowrap;
+
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+}
+
 
 
 
