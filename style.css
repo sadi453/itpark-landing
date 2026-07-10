@@ -37,7 +37,7 @@ a {
 .header {
 
     width: 100%;
-    padding: 25px 8%;
+    padding: 25px 5%;
 
     display: flex;
     justify-content: space-between;
@@ -45,6 +45,7 @@ a {
 
     position: fixed;
     top: 0;
+    left: 0;
 
     z-index: 100;
 
@@ -75,7 +76,10 @@ a {
 nav {
 
     display: flex;
-    gap: 35px;
+
+    align-items: center;
+
+    gap: 25px;
 
 }
 
