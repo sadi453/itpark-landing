@@ -1,134 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>IT Park Dushanbe</title>
 
+    <meta name="description" content="Official IT Park Dushanbe">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header class="header">
+<!-- =========================
+     INTRO
+========================= -->
 
-    <div class="logo">
-        IT PARK <span>DUSHANBE</span>
+<div class="intro" id="intro">
+
+    <div class="coin" id="coin">
+
+        <div class="coin-face coin-front">
+            <img src="assets/logo.png" alt="IT Park Logo">
+        </div>
+
+        <div class="coin-face coin-back">
+            <img src="assets/gerb.svg" alt="Coat of Arms">
+        </div>
+
     </div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Residents</a>
-        <a href="#">News</a>
-        <a href="#">Contacts</a>
-    </nav>
+</div>
+
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <a href="#" class="logo">
+
+            <img src="assets/logo.png" alt="IT Park">
+
+        </a>
+
+        <nav class="navigation">
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Residents</a>
+            <a href="#">News</a>
+            <a href="#">Contacts</a>
+
+        </nav>
+
+    </div>
 
 </header>
 
 
-<main>
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
-    
-<div class="hero-bg">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="grid"></div>
-    <div class="particles"></div>
-</div>
-    
-    <div class="hero-content">
 
-        <h1 class="hero-title">
-    Building the Digital Future of Tajikistan
-</h1>
-        <p>
-            IT Park Dushanbe is a platform for innovation,
-            technology companies and ambitious startups.
-        </p>
+    <!-- Background -->
+
+    <div class="hero-bg">
+
+        <div class="gradient"></div>
+
+        <div class="grid"></div>
+
+        <div class="particles"></div>
+
+        <img src="assets/tj.svg" class="hero-flag" alt="Flag">
+
+    </div>
 
 
-        <div class="buttons">
 
-            <button>
-                Explore Ecosystem
-            </button>
+    <div class="container hero-container">
 
-            <button class="secondary">
-                Become a Resident
-            </button>
+        <!-- Left -->
+
+        <div class="hero-left">
+
+            <!-- Монета после интро прилетит сюда -->
+
+            <div id="coin-target"></div>
+
+        </div>
+
+
+
+        <!-- Right -->
+
+        <div class="hero-right">
+
+            <span class="hero-label">
+                Official Innovation Ecosystem
+            </span>
+
+            <h1>
+
+                Building the Digital Future
+                <br>
+                of Tajikistan
+
+            </h1>
+
+            <p>
+
+                IT Park Dushanbe is a national platform supporting
+                startups, technology companies and digital innovation,
+                creating opportunities for sustainable economic growth.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn btn-primary">
+
+                    Explore Ecosystem
+
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+
+                    Become a Resident
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
-
-    <div class="hero-animation">
-
-        <div class="circle"></div>
-        <div class="circle small"></div>
-
-    </div>
-
-
 </section>
 
 
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about">
 
-    <h2>
-        About IT Park
-    </h2>
+</section>
 
-    <p>
-        IT Park Dushanbe creates opportunities for
-        technology businesses, startups and developers,
-        supporting innovation and digital transformation.
-    </p>
+
+
+<!-- =========================
+     ECOSYSTEM
+========================= -->
+
+<section class="ecosystem">
 
 </section>
 
 
 
-<section class="stats">
+<!-- =========================
+     RESIDENTS
+========================= -->
 
-    <div class="card">
-        <h3>100+</h3>
-        <p>Residents</p>
-    </div>
-
-
-    <div class="card">
-        <h3>50+</h3>
-        <p>Startups</p>
-    </div>
-
-
-    <div class="card">
-        <h3>100+</h3>
-        <p>Events</p>
-    </div>
-
+<section class="residents">
 
 </section>
 
 
 
-</main>
+<!-- =========================
+     NEWS
+========================= -->
+
+<section class="news">
+
+</section>
 
 
 
-<footer>
+<!-- =========================
+     PARTNERS
+========================= -->
 
-    <p>
-        © 2026 IT Park Dushanbe
-    </p>
+<section class="partners">
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
 
 </footer>
 
 
+
+<!-- GSAP -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
