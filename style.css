@@ -453,6 +453,7 @@ button{
     }
 
 }
+
 /* ==========================================
    INTRO SCREEN
 ========================================== */
@@ -547,14 +548,13 @@ button{
 /* FRONT — IT PARK */
 
 .coin-front {
-    transform: rotateY(0deg);
+     transform: rotateY(0deg) translateZ(2px);
 }
-
 
 /* BACK — COAT OF ARMS */
 
 .coin-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(2px);
 }
 
 
