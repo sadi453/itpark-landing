@@ -453,3 +453,601 @@ button{
     }
 
 }
+/* ==========================================
+   INTRO SCREEN
+========================================== */
+
+.intro {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 119, 255, 0.12),
+            transparent 40%
+        ),
+        #030611;
+
+    z-index: 9999;
+
+    overflow: hidden;
+    perspective: 1600px;
+}
+
+
+/* ==========================================
+   3D DIGITAL COIN
+========================================== */
+
+.coin {
+    position: relative;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    will-change: transform;
+
+    filter:
+        drop-shadow(0 0 35px rgba(0, 217, 255, 0.20))
+        drop-shadow(0 0 80px rgba(0, 119, 255, 0.15));
+}
+
+
+/* ==========================================
+   COIN FACES
+========================================== */
+
+.coin-face {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border: 2px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(255, 255, 255, 0.20),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(0, 119, 255, 0.08)
+        ),
+        rgba(5, 8, 22, 0.88);
+
+    box-shadow:
+        inset 0 0 45px rgba(255, 255, 255, 0.06),
+        inset 0 0 80px rgba(0, 119, 255, 0.10),
+        0 0 0 8px rgba(255, 255, 255, 0.025),
+        0 0 60px rgba(0, 217, 255, 0.15);
+}
+
+
+/* FRONT — IT PARK */
+
+.coin-front {
+    transform: rotateY(0deg);
+}
+
+
+/* BACK — COAT OF ARMS */
+
+.coin-back {
+    transform: rotateY(180deg);
+}
+
+
+/* ==========================================
+   IMAGES INSIDE COIN
+========================================== */
+
+.coin-front img {
+    width: 68%;
+    height: auto;
+
+    object-fit: contain;
+
+    padding: 25px;
+
+    filter:
+        drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+}
+
+
+.coin-back img {
+    width: 58%;
+    height: 58%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.16))
+        drop-shadow(0 0 35px rgba(0, 217, 255, 0.12));
+}
+
+
+/* ==========================================
+   COIN LIGHT EFFECT
+========================================== */
+
+.coin::before {
+    content: "";
+
+    position: absolute;
+    inset: -18px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.10),
+        inset 0 0 25px rgba(0, 217, 255, 0.06);
+
+    pointer-events: none;
+
+    transform: translateZ(-5px);
+}
+
+
+.coin::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35%;
+    height: 140%;
+
+    top: -20%;
+    left: -60%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    filter: blur(12px);
+
+    pointer-events: none;
+
+    animation: coinLight 5s ease-in-out infinite;
+}
+
+
+@keyframes coinLight {
+
+    0%,
+    25% {
+        left: -60%;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    65%,
+    100% {
+        left: 130%;
+        opacity: 0;
+    }
+
+}
+
+
+/* ==========================================
+   COIN TARGET
+========================================== */
+
+#coin-target {
+    position: relative;
+
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1600px;
+}
+
+
+/* ==========================================
+   HERO COIN FINAL STATE
+========================================== */
+
+.coin.is-in-hero {
+    position: relative;
+
+    width: 380px;
+    height: 380px;
+
+    cursor: default;
+}
+
+
+/* ==========================================
+   DECORATIVE RINGS AROUND COIN
+========================================== */
+
+.hero-left::before,
+.hero-left::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.hero-left::before {
+    width: 520px;
+    height: 520px;
+
+    border: 1px solid rgba(0, 217, 255, 0.10);
+
+    box-shadow:
+        0 0 80px rgba(0, 119, 255, 0.08),
+        inset 0 0 80px rgba(0, 217, 255, 0.04);
+
+    animation: ringPulse 6s ease-in-out infinite;
+}
+
+
+.hero-left::after {
+    width: 620px;
+    height: 620px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.055);
+
+    animation: ringRotate 40s linear infinite;
+}
+
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        transform: scale(0.97);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+}
+
+
+@keyframes ringRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================
+   HERO LEFT POSITION
+========================================== */
+
+.hero-left {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 650px;
+
+    isolation: isolate;
+}
+
+
+#coin-target {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* ==========================================
+   HERO CONTENT INITIAL ANIMATION STATE
+   GSAP WILL REVEAL THESE ELEMENTS
+========================================== */
+
+.header,
+.hero-label,
+.hero-right h1,
+.hero-right p,
+.hero-buttons {
+    will-change: transform, opacity;
+}
+
+
+/* ==========================================
+   FLAG
+========================================== */
+
+.hero-flag {
+    animation: flagFloat 12s ease-in-out infinite;
+
+    transform-origin: center;
+
+    filter:
+        saturate(0.85)
+        contrast(1.05);
+}
+
+
+@keyframes flagFloat {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(-1deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(-25px, -12px, 0)
+            rotate(1deg)
+            scale(1.025);
+    }
+
+}
+
+
+/* ==========================================
+   EXTRA BACKGROUND LIGHT
+========================================== */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: -250px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 119, 255, 0.13),
+            transparent 68%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -200px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 217, 255, 0.09),
+            transparent 68%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   HEADER SCROLLED STATE
+========================================== */
+
+.header.scrolled {
+    padding: 15px 0;
+
+    background: rgba(5, 8, 22, 0.78);
+
+    border-bottom-color: rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .hero-container {
+        grid-template-columns: 40% 60%;
+        gap: 30px;
+    }
+
+    .hero-right h1 {
+        font-size: clamp(48px, 5vw, 68px);
+    }
+
+    .coin,
+    .coin.is-in-hero,
+    #coin-target {
+        width: 340px;
+        height: 340px;
+    }
+
+    .hero-left::before {
+        width: 430px;
+        height: 430px;
+    }
+
+    .hero-left::after {
+        width: 510px;
+        height: 510px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .navigation {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 150px 0 80px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-left {
+        min-height: 430px;
+    }
+
+    .hero-right {
+        max-width: 720px;
+
+        margin: 0 auto;
+    }
+
+    .hero-right h1 {
+        white-space: normal;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 18px 0;
+    }
+
+    .logo img {
+        width: 135px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .hero-right h1 {
+        font-size: clamp(42px, 12vw, 60px);
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-right p {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .coin,
+    .coin.is-in-hero,
+    #coin-target {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-left {
+        min-height: 350px;
+    }
+
+    .hero-left::before {
+        width: 340px;
+        height: 340px;
+    }
+
+    .hero-left::after {
+        width: 390px;
+        height: 390px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+
+}
